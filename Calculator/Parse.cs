@@ -8,6 +8,13 @@ namespace Calculator
 {
     public class Parse
     {
+        public enum calculation
+        {
+            Add,
+            Subtract,
+            Divide,
+            Multiply
+        }
 
         public static double GetFirstNumber(string userInput)
         {
@@ -25,25 +32,29 @@ namespace Calculator
 
         }
 
-        public static char GetOperand(string userInput)
+        public static calculation GetOperand(string userInput)
         {
 
    
             if (userInput.Contains("+"))
             {
-                return '+';
+                return calculation.Add;
             }
             else if (userInput.Contains("-"))
             {
-                return '-';
+                return calculation.Subtract;
             }
             else if (userInput.Contains("*"))
             {
-                return '*';
+                return calculation.Multiply;
 
-            }else
+            }else if (userInput.Contains("/"))
             {
-                return '/';
+                return calculation.Divide;
+            }
+            else
+            {
+                throw new NotImplementedException("Not Implemented");
             }
         }
 

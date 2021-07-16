@@ -43,14 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calc.cs" />
-    <Compile Include="CalcAdd.cs" />
-    <Compile Include="CalcDivide.cs" />
-    <Compile Include="CalcMultiply.cs" />
+    <Compile Include="BLL\CalculatorBLL.cs" />
+    <Compile Include="BLL\ICAL.cs" />
     <Compile Include="Parse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CalcSubtract.cs" />
     <Compile Include="UserIO.cs" />
   </ItemGroup>
   <ItemGroup>

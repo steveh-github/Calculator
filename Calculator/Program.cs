@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,14 @@ namespace Calculator
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
 
             while(true)
             {
+
+                double res = 0;
 
                // prompt user for the equation
                string userInput = UserIO.GetInput();
@@ -34,28 +38,22 @@ namespace Calculator
                 // now do the calculation
                 double firstNumber = Parse.GetFirstNumber(userInput);
                 double secondNumber = Parse.GetSecondNumber(userInput);
-                char op = Parse.GetOperand(userInput);
-                
-                Calc calc;
-                double res = 0;
+               
+                CalculatorBLL myCal = new CalculatorBLL(firstNumber, secondNumber);
 
-                switch (op)
+                switch (Parse.GetOperand(userInput))
                 {
-                    case '+':
-                        calc = new CalcAdd(firstNumber, secondNumber);
-                        res = calc.CalculateExpression();
+                    case Parse.calculation.Add:
+                        res = myCal.Add();
                         break;
-                    case '-':
-                        calc = new CalcSubtract(firstNumber, secondNumber);
-                        res = calc.CalculateExpression();
+                    case Parse.calculation.Subtract:
+                        res = myCal.Subtract();
                         break;
-                    case '*':
-                        calc = new CalcMultiply(firstNumber, secondNumber);
-                        res = calc.CalculateExpression();
+                    case Parse.calculation.Multiply:
+                        res = myCal.Multiply();
                         break;
-                    case '/':
-                        calc = new CalcDivide(firstNumber, secondNumber);
-                        res = calc.CalculateExpression();
+                    case Parse.calculation.Divide:
+                        res = myCal.Divide();
                         break;
                 }
 
