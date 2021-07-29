@@ -39,7 +39,7 @@ namespace Calculator
                 double firstNumber = Parse.GetFirstNumber(userInput);
                 double secondNumber = Parse.GetSecondNumber(userInput);
                
-                CalculatorBLL myCal = new CalculatorBLL(firstNumber, secondNumber);
+                Calc myCal = new Calc(firstNumber, secondNumber);
 
                 switch (Parse.GetOperand(userInput))
                 {

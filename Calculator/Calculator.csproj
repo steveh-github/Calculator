@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\CalculatorBLL.cs" />
+    <Compile Include="BLL\Calc.cs" />
     <Compile Include="BLL\ICAL.cs" />
-    <Compile Include="Parse.cs" />
+    <Compile Include="BLL\Parse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserIO.cs" />
+    <Compile Include="BLL\UserIO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

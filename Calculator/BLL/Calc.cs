@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Calculator.BLL
 {
-    public class CalculatorBLL : ICAL
+    public class Calc : ICAL
     {
         public double number1 { get; set ; }
         public double number2 { get; set ; }
 
-        public CalculatorBLL(double number1, double number2)
+        public Calc(double number1, double number2)
         {
             this.number1 = number1;
             this.number2 = number2;
